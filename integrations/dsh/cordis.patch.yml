@@ -1,0 +1,5 @@
+- insert:
+    - id: codiscover_video
+      name: dsh-codiscover-video
+      config:
+        baseUrl: http://127.0.0.1:8765

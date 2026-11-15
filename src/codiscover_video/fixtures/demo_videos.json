@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "license": "MIT",
+  "provenance": {
+    "created_for": "CoDiscover Video demos, tests and teaching",
+    "method": "Project-authored fictional scenarios; not sampled from platform media or user logs.",
+    "fictional_fields": [
+      "id",
+      "title",
+      "author",
+      "duration",
+      "description",
+      "tags",
+      "segments"
+    ],
+    "contains_real_people_or_accounts": false,
+    "contains_platform_media": false,
+    "contains_user_feedback": false
+  },
+  "videos": [
+    {
+      "id": "demo-rain",
+      "title": "雨夜窗边，慢慢泡一杯茶",
+      "url": "",
+      "author": "窗边小屋",
+      "duration": 480,
+      "description": "雨声伴随泡茶的安静日常，没有背景音乐。",
+      "tags": [
+        "自然",
+        "安静",
+        "慢节奏",
+        "放松"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 70,
+          "text": "窗外下着雨，我们先烧一壶水。今天不用着急，听听雨落在屋檐上的声音。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 70,
+          "end": 180,
+          "text": "茶叶舒展开了。这一段只有水声和雨声，没有旁白。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 180,
+          "end": 400,
+          "text": "坐在窗边慢慢喝茶，不需要完成任何事情。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-cook",
+      "title": "下班后的两人晚餐",
+      "url": "",
+      "author": "厨房灯还亮着",
+      "duration": 720,
+      "description": "切菜、煮汤与轻声聊天的家庭记录。",
+      "tags": [
+        "做饭",
+        "生活",
+        "陪伴",
+        "慢节奏"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 90,
+          "text": "今天做简单的番茄汤和煎蛋，慢慢切菜，给自己留一点下班的时间。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 90,
+          "end": 300,
+          "text": "汤在锅里轻轻冒泡，我们聊聊今天的小事，不教复杂的菜谱。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 300,
+          "end": 650,
+          "text": "晚饭做好了，一起坐下来，不急着收拾。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-craft",
+      "title": "修好一把旧木椅",
+      "url": "",
+      "author": "慢手工",
+      "duration": 900,
+      "description": "安静的木工修复，保留工具原声。",
+      "tags": [
+        "手工",
+        "观察",
+        "慢节奏",
+        "轻度好奇"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 100,
+          "text": "先看看这把椅子的榫卯，松动的位置需要一点耐心。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 100,
+          "end": 420,
+          "text": "打磨时只听见砂纸的声音，没有快切镜头。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 420,
+          "end": 800,
+          "text": "木纹重新露出来了，旧物慢慢恢复可以使用的样子。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-fish",
+      "title": "水草缸里的一小时",
+      "url": "",
+      "author": "小小生态",
+      "duration": 3600,
+      "description": "固定机位观察游鱼和水草，没有解说。",
+      "tags": [
+        "自然",
+        "观察",
+        "安静",
+        "放松"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 600,
+          "text": "固定镜头中，小鱼缓慢穿过水草，只有流水声。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 600,
+          "end": 1800,
+          "text": "水草随水流摆动，画面保持稳定，无旁白。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-science",
+      "title": "为什么肥皂泡会有彩虹",
+      "url": "",
+      "author": "一小点好奇",
+      "duration": 420,
+      "description": "用简单实验解释日常现象，不布置知识任务。",
+      "tags": [
+        "科普",
+        "观察",
+        "轻度好奇"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 80,
+          "text": "吹一个肥皂泡，看看表面流动的颜色。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 80,
+          "end": 250,
+          "text": "光在薄膜两侧反射，不同厚度让颜色变了；不用记公式。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 250,
+          "end": 360,
+          "text": "我们再看一次泡泡变薄，观察就已经足够有趣。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-birds",
+      "title": "公园散步，找三种鸟",
+      "url": "",
+      "author": "周末走走",
+      "duration": 600,
+      "description": "安静步行与简单自然观察。",
+      "tags": [
+        "自然",
+        "散步",
+        "轻度好奇",
+        "放松"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 160,
+          "text": "沿着小路慢慢走，先停下来听一听鸟鸣。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 160,
+          "end": 420,
+          "text": "这里有麻雀和白头鹎，不必记住名字，看看它们在做什么。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-game",
+      "title": "极限排位，最后一分钟翻盘",
+      "url": "",
+      "author": "火力全开",
+      "duration": 480,
+      "description": "高音量解说和密集战斗剪辑。",
+      "tags": [
+        "游戏",
+        "竞技",
+        "高刺激",
+        "快节奏"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 120,
+          "text": "最后一分钟必须冲！现在看我的连招，太刺激了！",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 120,
+          "end": 400,
+          "text": "镜头快速切换，解说不断大声欢呼。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-movie",
+      "title": "十分钟讲完悬疑反转",
+      "url": "",
+      "author": "剧情加速器",
+      "duration": 600,
+      "description": "密集剧情解说，包含冲突与反转。",
+      "tags": [
+        "电影",
+        "悬疑",
+        "快节奏"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 120,
+          "text": "开场就是案件，下一秒又有新线索，所有人都在撒谎。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 120,
+          "end": 480,
+          "text": "必须记住这三个名字，最后的反转才看得懂。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-math",
+      "title": "从零推导注意力机制",
+      "url": "",
+      "author": "认真学一点",
+      "duration": 1800,
+      "description": "含公式推导和练习的技术教程。",
+      "tags": [
+        "知识",
+        "编程",
+        "学习",
+        "高认知负担"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 300,
+          "text": "先复习矩阵乘法，再推导缩放点积注意力。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 300,
+          "end": 1500,
+          "text": "请暂停视频，自己写出梯度并完成课后练习。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-pottery",
+      "title": "陶杯从泥团到上釉",
+      "url": "",
+      "author": "慢手工",
+      "duration": 800,
+      "description": "拉坯过程和窑火记录。",
+      "tags": [
+        "手工",
+        "观察",
+        "慢节奏",
+        "安静"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 250,
+          "text": "泥土在轮盘上缓缓展开，双手只需要很轻的力量。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 250,
+          "end": 700,
+          "text": "保留拉坯的原声，等杯子成形后再上釉。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-story",
+      "title": "今晚讲一件小事",
+      "url": "",
+      "author": "夜话电台",
+      "duration": 900,
+      "description": "温和的生活故事，适合做家务时听。",
+      "tags": [
+        "故事",
+        "陪伴",
+        "声音",
+        "慢节奏"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 180,
+          "text": "今晚没有大道理，只想聊聊邻居送来的一盆花。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 180,
+          "end": 750,
+          "text": "我们慢慢讲，你可以一边收拾厨房一边听，不需要看屏幕。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    },
+    {
+      "id": "demo-workout",
+      "title": "跟练十分钟高强度燃脂",
+      "url": "",
+      "author": "动起来",
+      "duration": 600,
+      "description": "快速节拍与高强度间歇训练。",
+      "tags": [
+        "运动",
+        "高刺激",
+        "节奏"
+      ],
+      "segments": [
+        {
+          "start": 0,
+          "end": 120,
+          "text": "准备跟上节奏，三二一，马上开始跳跃。",
+          "source": "demo_subtitle"
+        },
+        {
+          "start": 120,
+          "end": 500,
+          "text": "保持强度，不要停，我们继续下一组。",
+          "source": "demo_subtitle"
+        }
+      ],
+      "summary": "",
+      "traits": [],
+      "confidence": 0,
+      "source": "demo",
+      "content_status": "subtitle",
+      "image_urls": []
+    }
+  ]
+}

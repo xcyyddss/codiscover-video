@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "scenario": "after-work-discovery",
+  "mode": {
+    "provider": "demo",
+    "llm": "demo",
+    "network_required": false
+  },
+  "goal": {
+    "text": "下班后，我还不确定想看什么",
+    "context": "工作结束后的十分钟，想轻松一点，但说不清适合的题材。"
+  },
+  "exploration": {
+    "status": "completed",
+    "queries": [
+      "安静陪伴 轻度科普",
+      "轻度科普 自然",
+      "下班后，我还不确定想看什么"
+    ],
+    "indexed_video_ids": [
+      "demo-science",
+      "demo-rain",
+      "demo-cook",
+      "demo-fish",
+      "demo-pottery",
+      "demo-story"
+    ],
+    "event_kinds": [
+      "started",
+      "planned",
+      "search",
+      "inspect",
+      "indexed",
+      "inspect",
+      "indexed",
+      "inspect",
+      "indexed",
+      "inspect",
+      "indexed",
+      "inspect",
+      "indexed",
+      "inspect",
+      "indexed",
+      "completed"
+    ],
+    "model_http_calls": 0
+  },
+  "clarification": {
+    "user_message": "我喜欢安静的自然观察，也想试试轻度科普，但不要游戏和高刺激。",
+    "assistant_reply": "已把这次表达记入当前目标：优先探索安静陪伴、自然、轻度科普、轻度好奇；暂时避开游戏、高刺激。当前资料中可以先比较：水草缸里的一小时、为什么肥皂泡会有彩虹。 你更在意看完后的放松感，还是观看过程中有一点好奇心？",
+    "intent": {
+      "goal": "下班后，我还不确定想看什么",
+      "context": "工作结束后的十分钟，想轻松一点，但说不清适合的题材。",
+      "liked_tags": [
+        "安静陪伴",
+        "自然",
+        "轻度科普",
+        "轻度好奇"
+      ],
+      "disliked_tags": [
+        "游戏",
+        "高刺激"
+      ],
+      "hypotheses": [
+        "单次反馈不能代表长期稳定偏好"
+      ],
+      "question": "你更在意看完后的放松感，还是观看过程中有一点好奇心？"
+    },
+    "cited_video_ids": [
+      "demo-fish",
+      "demo-science"
+    ]
+  },
+  "recommendations_before_feedback": [
+    {
+      "video_id": "demo-fish",
+      "title": "水草缸里的一小时",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "固定机位观察游鱼和水草，没有解说。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-science",
+      "title": "为什么肥皂泡会有彩虹",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "用简单实验解释日常现象，不布置知识任务。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-rain",
+      "title": "雨夜窗边，慢慢泡一杯茶",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "雨声伴随泡茶的安静日常，没有背景音乐。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-pottery",
+      "title": "陶杯从泥团到上釉",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "拉坯过程和窑火记录。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-cook",
+      "title": "下班后的两人晚餐",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "今天做简单的番茄汤和煎蛋，慢慢切菜，给自己留一点下班的时间。 汤在锅里轻轻冒泡，我们聊聊今天的小事，不教复杂的菜谱。 晚饭做好了，一起坐下来，不急着收拾。",
+          "start": 0.0,
+          "end": 650.0,
+          "source": "demo_subtitle"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-story",
+      "title": "今晚讲一件小事",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "温和的生活故事，适合做家务时听。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    }
+  ],
+  "feedback": {
+    "video_id": "demo-science",
+    "rating": 2,
+    "note": "今晚看完仍在理解概念，下班后更想少一点解释。",
+    "context": "虚构的下班放松场景"
+  },
+  "recommendations_after_feedback": [
+    {
+      "video_id": "demo-fish",
+      "title": "水草缸里的一小时",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "固定机位观察游鱼和水草，没有解说。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-cook",
+      "title": "下班后的两人晚餐",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "今天做简单的番茄汤和煎蛋，慢慢切菜，给自己留一点下班的时间。 汤在锅里轻轻冒泡，我们聊聊今天的小事，不教复杂的菜谱。 晚饭做好了，一起坐下来，不急着收拾。",
+          "start": 0.0,
+          "end": 650.0,
+          "source": "demo_subtitle"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-rain",
+      "title": "雨夜窗边，慢慢泡一杯茶",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "雨声伴随泡茶的安静日常，没有背景音乐。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-pottery",
+      "title": "陶杯从泥团到上釉",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "拉坯过程和窑火记录。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    },
+    {
+      "video_id": "demo-story",
+      "title": "今晚讲一件小事",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "温和的生活故事，适合做家务时听。",
+          "start": 0,
+          "end": 0,
+          "source": "metadata"
+        }
+      ]
+    }
+  ],
+  "learning_goal": {
+    "text": "周末用简单科普理解身边的科学现象",
+    "context": "虚构的周末学习场景，愿意花十分钟理解概念。"
+  },
+  "learning_recommendations": [
+    {
+      "video_id": "demo-science",
+      "title": "为什么肥皂泡会有彩虹",
+      "reason": "依据本地内容证据匹配；请通过观看反馈验证体验",
+      "evidence": [
+        {
+          "text": "吹一个肥皂泡，看看表面流动的颜色。 光在薄膜两侧反射，不同厚度让颜色变了；不用记公式。 我们再看一次泡泡变薄，观察就已经足够有趣。",
+          "start": 0.0,
+          "end": 360.0,
+          "source": "demo_subtitle"
+        }
+      ]
+    }
+  ],
+  "free_feedback": {
+    "video_id": null,
+    "rating": 4,
+    "note": "此刻更想要安静的陪伴，不需要每次都学到知识。",
+    "context": "虚构自由反馈，与具体视频无关"
+  },
+  "checks": {
+    "exploration_completes": true,
+    "knowledge_has_timestamped_synthetic_evidence": true,
+    "feedback_target_initially_recommended": true,
+    "negative_feedback_excludes_only_current_goal": true,
+    "learning_goal_can_still_recommend_feedback_target": true,
+    "free_feedback_is_saved_without_video": true,
+    "no_model_http_calls": true
+  },
+  "limitations": "确定性合成示例仅验证流程和证据边界，不衡量真实推荐质量或用户满意度。"
+}

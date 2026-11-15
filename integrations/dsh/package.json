@@ -1,0 +1,12 @@
+{
+  "name": "dsh-codiscover-video",
+  "version": "0.1.0",
+  "description": "CoDiscover Video local intent discovery and video memory tools",
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js", "./package.json": "./package.json" },
+  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "LICENSE.upstream"],
+  "engines": { "dsh": ">=0.1.7-rc.1", "node": ">=24.9.0" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "scripts": { "test": "node --test tests/*.test.mjs" }
+}

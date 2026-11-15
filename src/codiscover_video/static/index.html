@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>CoDiscover Video · 内容共行工作台</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="CoDiscover Video 首页"><span class="brand-mark" aria-hidden="true">C↗</span><span>CoDiscover Video<small>你的内容共行助手</small></span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <button class="nav-item active" data-tab="companion" aria-current="page"><span aria-hidden="true">◈</span> 与 Agent 共行</button>
+        <button class="nav-item" data-tab="library"><span aria-hidden="true">▤</span> 本地知识库 <span id="library-count" class="nav-count">0</span></button>
+        <button class="nav-item" data-tab="explore"><span aria-hidden="true">◎</span> 探索与设置</button>
+      </nav>
+      <div class="sidebar-section-heading"><span>我的体验目标</span><button class="icon-button" id="new-goal" title="新建体验目标" aria-label="新建体验目标">＋</button></div>
+      <div id="goal-list" class="goal-list" aria-label="体验目标列表"></div>
+      <div class="sidebar-bottom"><span class="privacy-dot"></span><div>记忆保存在本机<small>你的反馈，让下一次探索更有方向。</small></div></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumb">WORKSPACE <span>/</span> <span id="page-name">与 Agent 共行</span></div>
+        <div class="topbar-actions"><span id="mode-badge" class="badge neutral">正在连接</span><button id="presence-toggle" class="presence-button" aria-pressed="true"><span class="status-dot"></span><span id="presence-label">我在线</span></button></div>
+      </header>
+      <div id="global-notice" class="notice hidden" role="status"></div>
+
+      <section id="tab-companion" class="tab-panel">
+        <div class="page-heading"><div><p class="eyebrow">从被动接收，到共同发现</p><h1>留一点时间，找到真正想看的。</h1><p class="subtitle">描述期待的体验，试试看，再一起调整方向。</p></div><span class="heading-art" aria-hidden="true">↗</span></div>
+        <div id="empty-goals" class="empty-onboarding hidden"><div class="onboarding-icon" aria-hidden="true">◈</div><h2>先从一个不必明确的愿望开始</h2><p>例如「下班后想放松十分钟，但还不知道适合看什么」。<br>Agent 会帮你探索内容，保留证据，再根据体验修正方向。</p><button class="button primary" data-action="new-goal">建立第一个体验目标 <span aria-hidden="true">↗</span></button></div>
+        <div id="companion-content" class="hidden">
+          <div class="goal-banner"><div><span class="label">正在一起探索</span><h2 id="current-goal-title"></h2><p id="current-goal-context"></p></div><button id="edit-goal" class="button subtle small">调整目标</button></div>
+          <div class="companion-grid">
+            <section class="panel conversation-panel" aria-labelledby="conversation-heading">
+              <div class="panel-header"><div><h2 id="conversation-heading">一起想一想 <span class="small-dot"></span></h2><p>不确定，也是一种有用的起点。</p></div><button id="new-session" class="text-button">新对话</button></div>
+              <div id="messages" class="messages" role="log" aria-live="polite" aria-label="与 Agent 的对话"></div>
+              <div class="conversation-prompts" id="conversation-prompts"><button data-prompt="我还不确定想看什么，可以先帮我发现适合的方向吗？">还不知道想看什么</button><button data-prompt="请基于已有证据给我几种不同的体验方向。">试试不同的方向</button></div>
+              <form id="chat-form" class="chat-form"><label class="sr-only" for="chat-input">向 Agent 发送消息</label><textarea id="chat-input" rows="2" maxlength="4000" placeholder="说说你现在的状态，或者刚才的视频给你的感觉…" required></textarea><div class="composer-footer"><span>Enter 发送 · Shift + Enter 换行</span><button id="chat-submit" class="button primary small" type="submit">发送 <span aria-hidden="true">↗</span></button></div></form>
+            </section>
+            <aside class="intent-column">
+              <section class="panel intent-panel"><div class="panel-header"><h2>逐渐清晰的意图</h2><button id="edit-intent" class="text-button">编辑</button></div><p class="muted compact">这是可以被你修正的理解。</p><div id="intent-content"></div></section>
+              <section class="panel feedback-prompt"><span class="mini-icon" aria-hidden="true">✳</span><h3>刚刚在别处看了一个视频？</h3><p>你自主发现的内容，同样能帮助 Agent 理解你。</p><button id="import-from-companion" class="button outline full-width">添加看过的视频</button><button id="free-feedback" class="text-button">或者，直接记录此刻的感受 →</button></section>
+            </aside>
+          </div>
+          <section class="recommendations-section" aria-labelledby="recommendations-heading"><div class="section-header"><div><p class="eyebrow">从证据出发</p><h2 id="recommendations-heading">值得试试的内容</h2><p class="muted">推荐只是体验假设；你的感受才是下一步的依据。</p></div><div class="button-group"><button id="start-from-companion" class="button outline small">探索新内容</button><button id="refresh-recommendations" class="button subtle small">刷新推荐 ↻</button></div></div><div id="recommendations" class="video-grid"></div></section>
+        </div>
+      </section>
+
+      <section id="tab-library" class="tab-panel hidden">
+        <div class="page-heading"><div><p class="eyebrow">积累有出处的理解</p><h1>本地知识库</h1><p class="subtitle">视频、字幕片段与体验特征，一起留在你的本机。</p></div><button id="import-from-library" class="button primary">添加视频 ＋</button></div>
+        <form id="library-search-form" class="search-bar"><label class="sr-only" for="library-query">搜索知识库</label><input id="library-query" type="search" maxlength="300" placeholder="搜索主题、体验特征或字幕内容…"><button class="button primary" type="submit">搜索</button></form>
+        <p id="library-summary" class="muted"></p><div id="library-videos" class="video-grid"></div>
+      </section>
+
+      <section id="tab-explore" class="tab-panel hidden">
+        <div class="page-heading"><div><p class="eyebrow">你离开后，探索仍可继续</p><h1>探索与设置</h1><p class="subtitle">让 Agent 有边界地搜索、理解，并记住有价值的内容。</p></div></div>
+        <div class="explore-grid">
+          <div class="explore-main"><section class="panel"><div class="panel-header"><h2>发起一轮探索</h2><span class="badge neutral">有预算 · 可中断</span></div><p class="muted">Agent 将围绕当前目标搜索视频，读取可获得的字幕或画面证据，再存入知识库。</p><form id="explore-form" class="explore-form"><label>体验目标<select id="explore-goal" required></select></label><label>本轮最多处理<select id="max-videos"><option value="2">2 个视频 · 快速尝试</option value="4" selected>4 个视频 · 标准探索</option><option value="8">8 个视频 · 扩展探索</option></select></label><button id="explore-submit" class="button primary" type="submit">开始探索 <span aria-hidden="true">↗</span></button></form><div class="info-note">定时探索在你标记离线后触发；本机服务需要持续运行。可在目标设置中调整间隔。</div></section>
+            <section class="panel task-panel"><div class="panel-header"><h2>探索记录</h2><button id="refresh-jobs" class="text-button">刷新 ↻</button></div><div id="job-list"></div></section>
+          </div>
+          <aside class="settings-column">
+            <section class="panel"><div class="panel-header"><h2>连接状态</h2><button id="refresh-status" class="text-button">检查</button></div><dl id="connection-details" class="details-list"></dl><div id="auth-panel"><p class="muted compact">真实 B 站字幕可能需要扫码登录。登录凭据仅在本机保存。</p><button id="auth-start" class="button outline full-width">B 站扫码登录</button><div id="qr-container" class="hidden"><img id="qr-image" alt="请用 B 站 App 扫描此登录二维码"><p id="qr-status" class="muted"></p><a id="qr-link" class="text-link hidden" target="_blank" rel="noopener noreferrer">打开扫码登录链接</a><button id="auth-poll" class="button subtle full-width">我已扫码，检查状态</button></div></div></section>
+            <section class="panel"><h2>本地记忆</h2><p class="muted">导出目标、视频与反馈，或清除当前本地工作台的数据。</p><div class="stat-row"><div><strong id="stat-videos">0</strong><span>知识库视频</span></div><div><strong id="stat-feedback">0</strong><span>体验反馈</span></div></div><button id="export-memory" class="button outline full-width">导出记忆 JSON ↓</button><button id="clear-memory" class="text-button danger">清除所有本地记忆</button></section>
+            <div class="scope-note"><strong>第一阶段 · 用户侧辅助 Agent</strong><p>本工作台不会在 B 站发布评论、私信或修改关注。演示模式使用合成素材；真实模式以实际读取到的证据为准。</p></div>
+          </aside>
+        </div>
+      </section>
+      <footer class="footer"><span>CoDiscover Video / Phase 01</span><span>共同发现，而不只是下一条。</span></footer>
+    </main>
+  </div>
+
+  <dialog id="goal-dialog"><form id="goal-form" class="dialog-content"><div class="dialog-header"><h2 id="goal-dialog-title">建立体验目标</h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><p class="muted">不用先想清楚题材，告诉 Agent 你希望获得什么。</p><input id="goal-id" type="hidden"><label>希望获得的体验<textarea id="goal-text" rows="3" maxlength="2000" placeholder="下班后想放松十分钟，最好有一点轻度好奇，不需要费力学习。" required></textarea></label><label>场景补充 <span class="optional">可选</span><input id="goal-context" maxlength="500" placeholder="例如：工作日晚上，独自吃饭时"></label><label>离线自动探索<select id="goal-interval"><option value="0">关闭，只手动探索</option><option value="60">离线时，每 1 小时</option><option value="360">离线时，每 6 小时</option><option value="1440">离线时，每天</option></select></label><p class="help-text">需要本机服务持续运行；在线时不启动新的定时任务。</p><div class="dialog-actions"><button type="button" class="button subtle" data-close-dialog>取消</button><button class="button primary" type="submit">保存目标</button></div></form></dialog>
+
+  <dialog id="intent-dialog"><form id="intent-form" class="dialog-content"><div class="dialog-header"><h2>修正 Agent 的理解</h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><p class="muted">每行一个词或短句。你的修改会用于后续推荐与探索。</p><label>想要的体验<input id="intent-goal" maxlength="2000" required></label><label>希望多一些<textarea id="intent-liked" rows="2" maxlength="1000" placeholder="轻度好奇&#10;缓慢节奏"></textarea></label><label>希望少一些<textarea id="intent-disliked" rows="2" maxlength="1000" placeholder="高强度刺激&#10;学习压力"></textarea></label><label>尚待验证的方向<textarea id="intent-hypotheses" rows="3" maxlength="1500"></textarea></label><div class="dialog-actions"><button type="button" class="button subtle" data-close-dialog>取消</button><button class="button primary" type="submit">保存理解</button></div></form></dialog>
+
+  <dialog id="import-dialog"><form id="import-form" class="dialog-content"><div class="dialog-header"><h2>添加你看过的视频</h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><p class="muted">Agent 会读取该视频的可用内容并存入知识库。无需由 Agent 推荐，也可以记录体验。</p><label>视频 BV 号或链接<input id="import-id" maxlength="500" placeholder="BV… 或 https://www.bilibili.com/video/BV…" required></label><p id="import-hint" class="help-text"></p><div class="dialog-actions"><button type="button" class="button subtle" data-close-dialog>取消</button><button class="button primary" type="submit">读取并保存</button></div></form></dialog>
+
+  <dialog id="feedback-dialog"><form id="feedback-form" class="dialog-content"><div class="dialog-header"><h2>这次体验，离期待有多近？</h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><p id="feedback-video-title" class="feedback-video-title"></p><input id="feedback-video-id" type="hidden"><fieldset class="rating-field"><legend>体验满足程度</legend><div class="rating-options"><label><input type="radio" name="rating" value="1" required><span>1<small>不符合</small></span></label><label><input type="radio" name="rating" value="2"><span>2<small>差一点</small></span></label><label><input type="radio" name="rating" value="3"><span>3<small>一般</small></span></label><label><input type="radio" name="rating" value="4"><span>4<small>挺接近</small></span></label><label><input type="radio" name="rating" value="5"><span>5<small>很满足</small></span></label></div></fieldset><label>你的感受<textarea id="feedback-note" rows="3" maxlength="2000" placeholder="喜欢轻松的语气，但节奏有点快；下次想试试更安静的内容。"></textarea></label><label>当时的场景 <span class="optional">可选</span><input id="feedback-context" maxlength="500" placeholder="例如：下班后有点累，想暂时放空"></label><div class="dialog-actions"><button type="button" class="button subtle" data-close-dialog>取消</button><button class="button primary" type="submit">保存反馈</button></div></form></dialog>
+
+  <dialog id="video-dialog" class="wide-dialog"><div class="dialog-content"><div class="dialog-header"><h2 id="detail-title"></h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><div id="video-detail"></div></div></dialog>
+  <dialog id="job-dialog" class="wide-dialog"><div class="dialog-content"><div class="dialog-header"><h2>探索执行记录</h2><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></div><div id="job-detail"></div></div></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+</body>
+</html>

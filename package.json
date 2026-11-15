@@ -1,0 +1,12 @@
+{
+  "name": "codiscover-video-ui-tests",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "test:browser": "playwright test",
+    "test:dsh": "node --test integrations/dsh/tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1"
+  }
+}

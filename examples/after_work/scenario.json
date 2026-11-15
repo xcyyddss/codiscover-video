@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "after-work-discovery",
+  "synthetic": true,
+  "description": "虚构用户从模糊期待到体验反馈的固定演示；不是实际用户研究。",
+  "goal": {
+    "text": "下班后，我还不确定想看什么",
+    "context": "工作结束后的十分钟，想轻松一点，但说不清适合的题材。"
+  },
+  "exploration": {
+    "max_videos": 6
+  },
+  "clarification": {
+    "message": "我喜欢安静的自然观察，也想试试轻度科普，但不要游戏和高刺激。"
+  },
+  "recommendation_query": "安静 自然 轻度科普",
+  "feedback": {
+    "video_id": "demo-science",
+    "rating": 2,
+    "note": "今晚看完仍在理解概念，下班后更想少一点解释。",
+    "context": "虚构的下班放松场景"
+  },
+  "learning_goal": {
+    "text": "周末用简单科普理解身边的科学现象",
+    "context": "虚构的周末学习场景，愿意花十分钟理解概念。"
+  },
+  "learning_query": "科普 肥皂泡 光 颜色",
+  "free_feedback": {
+    "rating": 4,
+    "note": "此刻更想要安静的陪伴，不需要每次都学到知识。",
+    "context": "虚构自由反馈，与具体视频无关"
+  },
+  "expected_invariants": [
+    "exploration_completes",
+    "knowledge_has_timestamped_synthetic_evidence",
+    "feedback_target_initially_recommended",
+    "negative_feedback_excludes_only_current_goal",
+    "learning_goal_can_still_recommend_feedback_target",
+    "free_feedback_is_saved_without_video",
+    "no_model_http_calls"
+  ]
+}
